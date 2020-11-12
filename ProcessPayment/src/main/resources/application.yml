@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition: processPayment
+      bindings:
+        processPayment-out-0:
+          destination: test/taxinyc/yourname/backoffice/payment/charged/v1/accepted
+        processPayment-in-0:
+          destination: test/taxinyc/ProcessPaymentQueue
+      solace:
+        bindings:
+          processPayment-in-0:
+            consumer:
+              queueAdditionalSubscriptions: 'taxinyc/ops/ride/updated/v1/dropoff/>'  
+      binders:
+        solace-binder:
+          type: solace
+          environment:
+            solace:
+              java:
+                host: 'taxi.messaging.solace.cloud:55555'
+                msgVpn: nyc-modern-taxi
+                clientUsername: public-taxi-user
+                clientPassword: iliketaxis
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+
