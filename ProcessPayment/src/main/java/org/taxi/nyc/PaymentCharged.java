@@ -1,8 +1,8 @@
-
 package org.taxi.nyc;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -10,10 +10,11 @@ public class PaymentCharged {
 
 	public PaymentCharged () {
 	}
+
 	public PaymentCharged (
 		String rideId, 
 		String entityType, 
-		Double amountCharged, 
+		java.math.BigDecimal amountCharged, 
 		Driver driver, 
 		String paymentChargedId, 
 		Passenger passenger, 
@@ -33,13 +34,12 @@ public class PaymentCharged {
 		this.timestamp = timestamp;
 	}
 
-
 	@JsonProperty("ride_id")
 	private String rideId;
 	@JsonProperty("entity_type")
 	private String entityType;
 	@JsonProperty("amount_charged")
-	private Double amountCharged;
+	private java.math.BigDecimal amountCharged;
 	private Driver driver;
 	@JsonProperty("payment_charged_id")
 	private String paymentChargedId;
@@ -51,7 +51,6 @@ public class PaymentCharged {
 	@JsonProperty("information_source")
 	private String informationSource;
 	private String timestamp;
-
 	public String getRideId() {
 		return rideId;
 	}
@@ -72,11 +71,11 @@ public class PaymentCharged {
 	}
 
 
-	public Double getAmountCharged() {
+	public java.math.BigDecimal getAmountCharged() {
 		return amountCharged;
 	}
 
-	public PaymentCharged setAmountCharged(Double amountCharged) {
+	public PaymentCharged setAmountCharged(java.math.BigDecimal amountCharged) {
 		this.amountCharged = amountCharged;
 		return this;
 	}
@@ -92,14 +91,16 @@ public class PaymentCharged {
 	}
 
 
+
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public static class Driver {
 
 		public Driver () {
 		}
+
 		public Driver (
 			Integer driverId, 
-			Integer rating, 
+			java.math.BigDecimal rating, 
 			String lastName, 
 			String carClass, 
 			String firstName) {
@@ -110,17 +111,15 @@ public class PaymentCharged {
 			this.firstName = firstName;
 		}
 
-
 		@JsonProperty("driver_id")
 		private Integer driverId;
-		private Integer rating;
+		private java.math.BigDecimal rating;
 		@JsonProperty("last_name")
 		private String lastName;
 		@JsonProperty("car_class")
 		private String carClass;
 		@JsonProperty("first_name")
 		private String firstName;
-
 		public Integer getDriverId() {
 			return driverId;
 		}
@@ -131,11 +130,11 @@ public class PaymentCharged {
 		}
 
 
-		public Integer getRating() {
+		public java.math.BigDecimal getRating() {
 			return rating;
 		}
 
-		public Driver setRating(Integer rating) {
+		public Driver setRating(java.math.BigDecimal rating) {
 			this.rating = rating;
 			return this;
 		}
@@ -170,7 +169,6 @@ public class PaymentCharged {
 			return this;
 		}
 
-
 		public String toString() {
 			return "Driver ["
 			+ " driverId: " + driverId
@@ -181,8 +179,6 @@ public class PaymentCharged {
 			+ " ]";
 		}
 	}
-
-
 
 	public String getPaymentChargedId() {
 		return paymentChargedId;
@@ -204,14 +200,16 @@ public class PaymentCharged {
 	}
 
 
+
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public static class Passenger {
 
 		public Passenger () {
 		}
+
 		public Passenger (
 			Integer passengerId, 
-			Integer rating, 
+			java.math.BigDecimal rating, 
 			String lastName, 
 			String firstName) {
 			this.passengerId = passengerId;
@@ -220,15 +218,13 @@ public class PaymentCharged {
 			this.firstName = firstName;
 		}
 
-
 		@JsonProperty("passenger_id")
 		private Integer passengerId;
-		private Integer rating;
+		private java.math.BigDecimal rating;
 		@JsonProperty("last_name")
 		private String lastName;
 		@JsonProperty("first_name")
 		private String firstName;
-
 		public Integer getPassengerId() {
 			return passengerId;
 		}
@@ -239,11 +235,11 @@ public class PaymentCharged {
 		}
 
 
-		public Integer getRating() {
+		public java.math.BigDecimal getRating() {
 			return rating;
 		}
 
-		public Passenger setRating(Integer rating) {
+		public Passenger setRating(java.math.BigDecimal rating) {
 			this.rating = rating;
 			return this;
 		}
@@ -268,7 +264,6 @@ public class PaymentCharged {
 			return this;
 		}
 
-
 		public String toString() {
 			return "Passenger ["
 			+ " passengerId: " + passengerId
@@ -278,8 +273,6 @@ public class PaymentCharged {
 			+ " ]";
 		}
 	}
-
-
 
 	public String getPaymentStatus() {
 		return paymentStatus;
@@ -320,7 +313,6 @@ public class PaymentCharged {
 		return this;
 	}
 
-
 	public String toString() {
 		return "PaymentCharged ["
 		+ " rideId: " + rideId
@@ -336,4 +328,3 @@ public class PaymentCharged {
 		+ " ]";
 	}
 }
-

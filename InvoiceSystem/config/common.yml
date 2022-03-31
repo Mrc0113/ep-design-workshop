@@ -1,0 +1,24 @@
+default:
+  app:
+    name: InvoiceSystem
+    version: 0.0.1
+
+  broker:
+    mqtt:
+      url: mqtts://taxi.messaging.solace.cloud:8883
+      topics: ["test/taxinyc/YOUR_UNIQUE_NAME/backoffice/payment/charged/v1/accepted"]
+      qos:
+      protocol: mqtts
+      retain:
+      subscribe: true
+      config:
+          username: "public-taxi-user"
+          password: "iliketaxis"
+
+development:
+
+test:
+
+staging:
+
+production:
