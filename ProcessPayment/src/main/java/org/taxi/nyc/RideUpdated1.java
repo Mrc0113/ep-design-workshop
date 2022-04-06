@@ -1,29 +1,30 @@
-
 package org.taxi.nyc;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class RideUpdated {
 
-	public RideUpdated () {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class RideUpdated1 {
+
+	public RideUpdated1 () {
 	}
-	public RideUpdated (
+
+	public RideUpdated1 (
 		String rideId, 
 		Integer heading, 
-		Double latitude, 
+		java.math.BigDecimal latitude, 
 		Integer passengerCount, 
 		Integer pointIdx, 
 		String informationSource, 
 		Integer speed, 
 		Driver driver, 
 		Passenger passenger, 
-		Double meterIncrement, 
-		Double longitude, 
+		java.math.BigDecimal meterIncrement, 
+		java.math.BigDecimal longitude, 
 		String timestamp, 
-		Double meterReading, 
+		java.math.BigDecimal meterReading, 
 		RideStatus rideStatus) {
 		this.rideId = rideId;
 		this.heading = heading;
@@ -41,11 +42,10 @@ public class RideUpdated {
 		this.rideStatus = rideStatus;
 	}
 
-
 	@JsonProperty("ride_id")
 	private String rideId;
 	private Integer heading;
-	private Double latitude;
+	private java.math.BigDecimal latitude;
 	@JsonProperty("passenger_count")
 	private Integer passengerCount;
 	@JsonProperty("point_idx")
@@ -56,19 +56,18 @@ public class RideUpdated {
 	private Driver driver;
 	private Passenger passenger;
 	@JsonProperty("meter_increment")
-	private Double meterIncrement;
-	private Double longitude;
+	private java.math.BigDecimal meterIncrement;
+	private java.math.BigDecimal longitude;
 	private String timestamp;
 	@JsonProperty("meter_reading")
-	private Double meterReading;
+	private java.math.BigDecimal meterReading;
 	@JsonProperty("ride_status")
 	private RideStatus rideStatus;
-
 	public String getRideId() {
 		return rideId;
 	}
 
-	public RideUpdated setRideId(String rideId) {
+	public RideUpdated1 setRideId(String rideId) {
 		this.rideId = rideId;
 		return this;
 	}
@@ -78,17 +77,17 @@ public class RideUpdated {
 		return heading;
 	}
 
-	public RideUpdated setHeading(Integer heading) {
+	public RideUpdated1 setHeading(Integer heading) {
 		this.heading = heading;
 		return this;
 	}
 
 
-	public Double getLatitude() {
+	public java.math.BigDecimal getLatitude() {
 		return latitude;
 	}
 
-	public RideUpdated setLatitude(Double latitude) {
+	public RideUpdated1 setLatitude(java.math.BigDecimal latitude) {
 		this.latitude = latitude;
 		return this;
 	}
@@ -98,7 +97,7 @@ public class RideUpdated {
 		return passengerCount;
 	}
 
-	public RideUpdated setPassengerCount(Integer passengerCount) {
+	public RideUpdated1 setPassengerCount(Integer passengerCount) {
 		this.passengerCount = passengerCount;
 		return this;
 	}
@@ -108,7 +107,7 @@ public class RideUpdated {
 		return pointIdx;
 	}
 
-	public RideUpdated setPointIdx(Integer pointIdx) {
+	public RideUpdated1 setPointIdx(Integer pointIdx) {
 		this.pointIdx = pointIdx;
 		return this;
 	}
@@ -118,7 +117,7 @@ public class RideUpdated {
 		return informationSource;
 	}
 
-	public RideUpdated setInformationSource(String informationSource) {
+	public RideUpdated1 setInformationSource(String informationSource) {
 		this.informationSource = informationSource;
 		return this;
 	}
@@ -128,7 +127,7 @@ public class RideUpdated {
 		return speed;
 	}
 
-	public RideUpdated setSpeed(Integer speed) {
+	public RideUpdated1 setSpeed(Integer speed) {
 		this.speed = speed;
 		return this;
 	}
@@ -138,10 +137,11 @@ public class RideUpdated {
 		return driver;
 	}
 
-	public RideUpdated setDriver(Driver driver) {
+	public RideUpdated1 setDriver(Driver driver) {
 		this.driver = driver;
 		return this;
 	}
+
 
 
 	@JsonInclude(JsonInclude.Include.NON_NULL)
@@ -149,9 +149,10 @@ public class RideUpdated {
 
 		public Driver () {
 		}
+
 		public Driver (
 			Integer driverId, 
-			Double rating, 
+			java.math.BigDecimal rating, 
 			String lastName, 
 			String carClass, 
 			String firstName) {
@@ -162,17 +163,15 @@ public class RideUpdated {
 			this.firstName = firstName;
 		}
 
-
 		@JsonProperty("driver_id")
 		private Integer driverId;
-		private Double rating;
+		private java.math.BigDecimal rating;
 		@JsonProperty("last_name")
 		private String lastName;
 		@JsonProperty("car_class")
 		private String carClass;
 		@JsonProperty("first_name")
 		private String firstName;
-
 		public Integer getDriverId() {
 			return driverId;
 		}
@@ -183,11 +182,11 @@ public class RideUpdated {
 		}
 
 
-		public Double getRating() {
+		public java.math.BigDecimal getRating() {
 			return rating;
 		}
 
-		public Driver setRating(Double rating) {
+		public Driver setRating(java.math.BigDecimal rating) {
 			this.rating = rating;
 			return this;
 		}
@@ -222,7 +221,6 @@ public class RideUpdated {
 			return this;
 		}
 
-
 		public String toString() {
 			return "Driver ["
 			+ " driverId: " + driverId
@@ -234,16 +232,15 @@ public class RideUpdated {
 		}
 	}
 
-
-
 	public Passenger getPassenger() {
 		return passenger;
 	}
 
-	public RideUpdated setPassenger(Passenger passenger) {
+	public RideUpdated1 setPassenger(Passenger passenger) {
 		this.passenger = passenger;
 		return this;
 	}
+
 
 
 	@JsonInclude(JsonInclude.Include.NON_NULL)
@@ -251,9 +248,10 @@ public class RideUpdated {
 
 		public Passenger () {
 		}
+
 		public Passenger (
 			Integer passengerId, 
-			Double rating, 
+			java.math.BigDecimal rating, 
 			String lastName, 
 			String firstName) {
 			this.passengerId = passengerId;
@@ -262,15 +260,13 @@ public class RideUpdated {
 			this.firstName = firstName;
 		}
 
-
 		@JsonProperty("passenger_id")
 		private Integer passengerId;
-		private Double rating;
+		private java.math.BigDecimal rating;
 		@JsonProperty("last_name")
 		private String lastName;
 		@JsonProperty("first_name")
 		private String firstName;
-
 		public Integer getPassengerId() {
 			return passengerId;
 		}
@@ -281,11 +277,11 @@ public class RideUpdated {
 		}
 
 
-		public Double getRating() {
+		public java.math.BigDecimal getRating() {
 			return rating;
 		}
 
-		public Passenger setRating(Double rating) {
+		public Passenger setRating(java.math.BigDecimal rating) {
 			this.rating = rating;
 			return this;
 		}
@@ -310,7 +306,6 @@ public class RideUpdated {
 			return this;
 		}
 
-
 		public String toString() {
 			return "Passenger ["
 			+ " passengerId: " + passengerId
@@ -321,23 +316,21 @@ public class RideUpdated {
 		}
 	}
 
-
-
-	public Double getMeterIncrement() {
+	public java.math.BigDecimal getMeterIncrement() {
 		return meterIncrement;
 	}
 
-	public RideUpdated setMeterIncrement(Double meterIncrement) {
+	public RideUpdated1 setMeterIncrement(java.math.BigDecimal meterIncrement) {
 		this.meterIncrement = meterIncrement;
 		return this;
 	}
 
 
-	public Double getLongitude() {
+	public java.math.BigDecimal getLongitude() {
 		return longitude;
 	}
 
-	public RideUpdated setLongitude(Double longitude) {
+	public RideUpdated1 setLongitude(java.math.BigDecimal longitude) {
 		this.longitude = longitude;
 		return this;
 	}
@@ -347,17 +340,17 @@ public class RideUpdated {
 		return timestamp;
 	}
 
-	public RideUpdated setTimestamp(String timestamp) {
+	public RideUpdated1 setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 		return this;
 	}
 
 
-	public Double getMeterReading() {
+	public java.math.BigDecimal getMeterReading() {
 		return meterReading;
 	}
 
-	public RideUpdated setMeterReading(Double meterReading) {
+	public RideUpdated1 setMeterReading(java.math.BigDecimal meterReading) {
 		this.meterReading = meterReading;
 		return this;
 	}
@@ -367,17 +360,14 @@ public class RideUpdated {
 		return rideStatus;
 	}
 
-	public RideUpdated setRideStatus(RideStatus rideStatus) {
+	public RideUpdated1 setRideStatus(RideStatus rideStatus) {
 		this.rideStatus = rideStatus;
 		return this;
 	}
 
 
-	public static enum RideStatus { accepted,pickup,enroute,dropoff }
-
-
-	public String toString() {
-		return "RideUpdated ["
+	public static enum RideStatus { accepted,pickup,enroute,dropoff }	public String toString() {
+		return "RideUpdated1 ["
 		+ " rideId: " + rideId
 		+ " heading: " + heading
 		+ " latitude: " + latitude
@@ -395,4 +385,3 @@ public class RideUpdated {
 		+ " ]";
 	}
 }
-

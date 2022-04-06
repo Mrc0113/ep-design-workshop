@@ -5,14 +5,14 @@ spring:
         definition: processPayment
       bindings:
         processPayment-out-0:
-          destination: test/taxinyc/yourname/backoffice/payment/charged/v1/accepted
+          destination: test/taxinyc/YOUR_UNIQUE_NAME/backoffice/payment/charged/v1/accepted
         processPayment-in-0:
-          destination: test/taxinyc/ProcessPaymentQueue
+          destination: test/taxinyc/PaymentProcessorQueue
       solace:
         bindings:
           processPayment-in-0:
             consumer:
-              queueAdditionalSubscriptions: 'taxinyc/ops/ride/updated/v1/dropoff/>'  
+              queueAdditionalSubscriptions: "taxinyc/ops/ride/updated/v1/dropoff/>"
       binders:
         solace-binder:
           type: solace
