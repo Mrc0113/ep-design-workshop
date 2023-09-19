@@ -1,3 +1,6 @@
+
+## NOTE THAT THE CONTENTS OF THIS REPO USE V1 OF THE SOLACE EVENT PORTAL. USERS SHOULD NOW USE V2 AND THEREFORE THIS REPO IS EFFECTIVELY DEPRECATED
+
 # ep-design-workshop
 
 This workshop contains resources used in the codelab located at https://codelabs.solace.dev/design-document-discover-develop-event-driven-apis
